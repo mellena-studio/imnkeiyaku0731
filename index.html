@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mellena Studio 契約締結サイト</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+</head>
+<body>
+
+<div class="background-glow"></div>
+
+<header>
+
+<img src="logo.png" class="logo">
+
+<h1>Mellena Studio</h1>
+
+<p>契約締結サイト</p>
+
+</header>
+
+<section class="contract-section">
+
+<h2>契約内容確認</h2>
+
+<div id="contractBox" class="contract-box">
+
+<h3>Nidmegent Esports 所属契約書</h3>
+
+<p>
+Nidmegent Esports（以下「甲」という。）と、
+契約者（以下「乙」という。）は、
+乙が甲の運営するeスポーツチームに所属し活動することについて、
+以下のとおり契約を締結する。
+</p>
+
+<h4>第1条（所属）</h4>
+
+<p>
+甲は乙をチームメンバーとして受け入れ、
+乙はこれを承諾する。
+</p>
+
+<p>
+契約期間は以下のとおりとする。
+</p>
+
+<ul>
+<li>CREATOR部門</li>
+<li>STREAMER部門</li>
+<li>VALORANT部門</li>
+<li>Minecraft部門</li>
+<li>Apex Legends部門</li>
+</ul>
+
+<p>
+契約締結日から2か月間
+</p>
+
+<p>
+VALORANT Premier部門：
+契約締結日から対象Act終了日まで
+</p>
+
+<p>
+契約期間満了の7日前までに
+甲または乙から更新拒絶の意思表示がない場合、
+本契約は同一条件で更新されるものとする。
+</p>
+
+<p>
+
+<h4>第2条（活動場所）</h4>
+  
+</p>
+
+<p>
+1.乙の活動場所は原則として自由とする。
+</p>
+  
+<p>
+2.大会、イベント、撮影その他の活動において、甲が必要と認めた場合は指定場所での活動を求めることができる。
+</p>
+
+<p>
+
+<h4>第3条（活動内容）</h4>
+  
+</p>
+  
+<p>
+1.YouTube、Twitchその他配信サービスにおける配信活動
+</p>
+  
+<p>
+2.チーム及びスポンサーの広報活動
+</p>
+  
+<p>
+3.SNSを利用した情報発信
+</p>
+  
+<p>
+4.その他甲と乙が協議のうえ定める活動
+</p>
+
+<p>
+
+<h4>第4条（報酬）</h4>
+
+</p>
+
+<p>
+1.乙に対する報酬は以下のとおりとする。
+</p>
+
+<ul>
+<li>指定大会優勝時：1大会につき2,000円</li>
+<li>その他報酬については甲乙協議のうえ別途定める。</li>
+</ul>
+
+<p>
+2.報酬の締切日は毎月末日とする。
+</p>
+
+<p>
+3.報酬の支払日は翌月末日とする。
+</p>
+
+<p>
+4.支払方法はPayPay送金又は銀行振込とする。
+</p>
+
+<p>
+5.振込手数料の負担は甲とする。
+</p>
+
+</div>
+
+<label class="agree-box">
+<input type="checkbox" id="agreeCheck" disabled>
+契約内容を確認しました
+</label>
+
+</section>
+
+<section class="form-section">
+
+<h2>契約者情報</h2>
+
+<div class="input-group">
+<label>氏名</label>
+<input type="text" id="fullname">
+</div>
+
+<div class="input-group">
+<label>ハンドルネーム</label>
+<input type="text" id="nickname">
+</div>
+
+<div class="input-group">
+<label>メールアドレス</label>
+<input type="email" id="email">
+</div>
+
+<div class="input-group">
+<label>所属部門</label>
+
+<select id="division">
+
+<option>VALORANT</option>
+
+<option>Apex Legends</option>
+
+<option>Minecraft</option>
+
+<option>STREAMER</option>
+
+<option>CREATOR</option>
+
+<option>VALORANT Premier</option>
+
+</select>
+
+</div>
+
+<button id="sealBtn">
+電子印鑑生成
+</button>
+
+<div class="seal-preview">
+
+<div id="seal">
+
+<span id="sealName">
+契約者
+</span>
+
+</div>
+
+</div>
+
+<button id="contractBtn">
+契約を締結する
+</button>
+
+</section>
+
+<section id="completeSection" class="hidden">
+
+<h2>契約完了</h2>
+
+<p>
+契約番号：
+<span id="contractNumber"></span>
+</p>
+
+<button id="pdfBtn">
+PDFダウンロード
+</button>
+
+</section>
+
+<footer>
+
+<p>
+© Mellena Studio
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
