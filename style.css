@@ -1,0 +1,356 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+:root{
+    --gold:#d4af37;
+    --gold-light:#f5d97b;
+    --black:#0b0b0b;
+    --card:#141414;
+    --border:#2b2b2b;
+}
+
+body{
+    background:var(--black);
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* 背景演出 */
+
+.background-glow{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+
+    background:
+    radial-gradient(circle at 20% 20%,
+    rgba(212,175,55,.15),
+    transparent 30%),
+
+    radial-gradient(circle at 80% 70%,
+    rgba(212,175,55,.12),
+    transparent 35%);
+}
+
+/* ヘッダー */
+
+header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.logo{
+    width:160px;
+    margin-bottom:20px;
+
+    animation:
+    floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+header h1{
+    color:var(--gold);
+    font-size:42px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+header p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+/* セクション */
+
+section{
+    width:min(1100px,95%);
+    margin:30px auto;
+}
+
+/* カード */
+
+.contract-section,
+.form-section,
+#completeSection{
+
+    background:rgba(20,20,20,.85);
+
+    border:1px solid rgba(212,175,55,.25);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:
+    0 0 30px rgba(212,175,55,.08);
+}
+
+section h2{
+    color:var(--gold);
+    margin-bottom:20px;
+}
+
+/* 契約書 */
+
+.contract-box{
+
+    height:450px;
+
+    overflow-y:auto;
+
+    border:1px solid var(--border);
+
+    background:#0f0f0f;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    line-height:1.9;
+}
+
+.contract-box h3{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.contract-box h4{
+    margin-top:20px;
+    color:var(--gold-light);
+}
+
+.contract-box ul{
+    margin-left:25px;
+}
+
+.contract-box hr{
+    margin:25px 0;
+    border:none;
+    border-top:1px solid #333;
+}
+
+/* 同意チェック */
+
+.agree-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:20px;
+
+    font-size:15px;
+}
+
+.agree-box input{
+
+    width:18px;
+
+    height:18px;
+}
+
+/* 入力 */
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    color:var(--gold-light);
+}
+
+input,
+select{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid #333;
+
+    background:#0d0d0d;
+
+    color:#fff;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+input:focus,
+select:focus{
+
+    border-color:var(--gold);
+
+    box-shadow:
+    0 0 15px rgba(212,175,55,.3);
+}
+
+/* ボタン */
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--gold),
+        #a67c00
+    );
+
+    color:#000;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 25px rgba(212,175,55,.25);
+}
+
+/* 印鑑 */
+
+.seal-preview{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:30px;
+
+    margin-bottom:20px;
+}
+
+#seal{
+
+    width:150px;
+
+    height:150px;
+
+    border:6px solid #ff3333;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:#ff3333;
+
+    font-weight:700;
+
+    font-size:20px;
+
+    line-height:1.5;
+
+    background:rgba(255,0,0,.04);
+}
+
+#sealName{
+    white-space:pre-line;
+}
+
+/* 完了画面 */
+
+#completeSection{
+
+    text-align:center;
+}
+
+#contractNumber{
+
+    color:var(--gold);
+
+    font-size:22px;
+
+    font-weight:700;
+}
+
+.hidden{
+    display:none;
+}
+
+/* フッター */
+
+footer{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:#777;
+}
+
+/* スマホ */
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:30px;
+    }
+
+    .logo{
+        width:120px;
+    }
+
+    .contract-box{
+        height:350px;
+    }
+
+    #seal{
+
+        width:120px;
+
+        height:120px;
+
+        font-size:16px;
+    }
+}
