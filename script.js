@@ -1,7 +1,7 @@
 // EmailJS 初期化
 // EmailJS登録後に置き換える
 
-emailjs.init("YOUR_PUBLIC_KEY");
+emailjs.init("公開キー");
 
 // 要素取得
 
@@ -122,8 +122,8 @@ contractBtn.addEventListener("click", async () => {
     try {
 
         await emailjs.send(
-            "YOUR_SERVICE_ID",
-            "YOUR_TEMPLATE_ID",
+            "service_xxxxx"
+            "template_xxxxx"
             {
 
                 contract_number:
