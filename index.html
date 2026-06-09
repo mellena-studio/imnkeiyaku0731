@@ -328,3 +328,290 @@ VLRT PREMIER
 </select>
 
 </div>
+
+<!-- 電子印鑑 -->
+
+<h2>
+電子署名
+</h2>
+
+<p class="seal-description">
+氏名から電子印鑑を生成します
+</p>
+
+<div id="sealContainer">
+
+<div id="seal">
+
+契約者
+
+</div>
+
+</div>
+
+<button
+id="generateSealBtn"
+class="gold-btn"
+>
+
+電子印鑑生成
+
+</button>
+
+<br><br>
+
+<button
+id="openConfirmBtn"
+class="gold-btn large"
+disabled
+>
+
+契約を締結する
+
+</button>
+
+</div>
+
+</section>
+
+<!-- 契約締結確認モーダル -->
+
+<div
+id="confirmModal"
+class="modal hidden"
+>
+
+<div class="modal-content">
+
+<h2>
+契約締結確認
+</h2>
+
+<p>
+以下の内容で契約を締結します。
+</p>
+
+<div class="confirm-info">
+
+<p>
+
+<strong>契約番号</strong>
+
+<br>
+
+<span id="previewContractNumber">
+-
+</span>
+
+</p>
+
+<p>
+
+<strong>氏名</strong>
+
+<br>
+
+<span id="previewName">
+-
+</span>
+
+</p>
+
+<p>
+
+<strong>メールアドレス</strong>
+
+<br>
+
+<span id="previewEmail">
+-
+</span>
+
+</p>
+
+<p>
+
+<strong>所属部門</strong>
+
+<br>
+
+<span id="previewDivision">
+-
+</span>
+
+</p>
+
+</div>
+
+<div class="modal-buttons">
+
+<button
+id="cancelBtn"
+class="gray-btn"
+>
+
+戻る
+
+</button>
+
+<button
+id="confirmBtn"
+class="gold-btn"
+>
+
+契約を締結
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ローディング -->
+
+<div
+id="loadingScreen"
+class="loading hidden"
+>
+
+<div class="loading-box">
+
+<h2>
+Mellena Studio
+</h2>
+
+<p id="loadingText">
+
+電子契約を処理しています...
+
+</p>
+
+<div class="loader"></div>
+
+</div>
+
+</div>
+
+<!-- 完了画面 -->
+
+<section
+id="completeSection"
+class="complete-section hidden"
+>
+
+<div class="card complete-card">
+
+<h2>
+
+契約締結完了
+
+</h2>
+
+<p>
+
+契約の締結が完了しました。
+
+</p>
+
+<div class="complete-info">
+
+<p>
+
+<strong>
+契約番号
+</strong>
+
+<br>
+
+<span id="contractNumber">
+-
+</span>
+
+</p>
+
+<p>
+
+<strong>
+契約締結日時
+</strong>
+
+<br>
+
+<span id="signedDate">
+-
+</span>
+
+</p>
+
+</div>
+
+<div class="success-check">
+
+✓
+
+</div>
+
+<div class="download-area">
+
+<button
+id="pdfBtn"
+class="gold-btn large"
+>
+
+契約書PDFをダウンロード
+
+</button>
+
+</div>
+
+<div class="qr-area">
+
+<h3>
+
+契約確認QRコード
+
+</h3>
+
+<canvas id="qrCanvas"></canvas>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- フッター -->
+
+<footer>
+
+<p>
+
+© Mellena Studio
+
+</p>
+
+<p>
+
+Nidmegent Esports
+Electronic Contract System
+
+</p>
+
+</footer>
+
+<!-- ライブラリ初期化 -->
+
+<script>
+
+emailjs.init(
+"YOUR_PUBLIC_KEY"
+);
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
