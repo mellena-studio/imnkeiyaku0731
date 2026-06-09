@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,32 +9,82 @@
 
 <link rel="stylesheet" href="style.css">
 
+<!-- PDF -->
 <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+<!-- QR -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<!-- html2canvas -->
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 </head>
+
 <body>
 
 <div class="background-glow"></div>
 
 <header>
 
-<img src="logo.png" class="logo">
+<img src="logo.png" class="logo" alt="Mellena Studio">
 
 <h1>Mellena Studio</h1>
 
-<p>契約締結サイト</p>
+<p class="subtitle">
+Contract Management System
+</p>
 
 </header>
 
+<!-- STEP BAR -->
+
+<div class="stepbar">
+
+<div class="step active">
+STEP 1
+<br>
+契約確認
+</div>
+
+<div class="step">
+STEP 2
+<br>
+契約情報
+</div>
+
+<div class="step">
+STEP 3
+<br>
+電子署名
+</div>
+
+<div class="step">
+STEP 4
+<br>
+完了
+</div>
+
+</div>
+
+<!-- 契約書 -->
+
 <section class="contract-section">
 
-<h2>契約内容確認</h2>
+<div class="card">
 
-<div id="contractBox" class="contract-box">
+<h2>
+Nidmegent Esports 所属契約書
+</h2>
 
-<h3>Nidmegent Esports 所属契約書</h3>
+<div
+id="contractBox"
+class="contract-box"
+>
+
+<h3>前文</h3>
 
 <p>
 Nidmegent Esports（以下「甲」という。）と、
@@ -42,7 +93,7 @@ Nidmegent Esports（以下「甲」という。）と、
 以下のとおり契約を締結する。
 </p>
 
-<h4>第1条（所属）</h4>
+<h3>第1条（所属）</h3>
 
 <p>
 甲は乙をチームメンバーとして受け入れ、
@@ -54,11 +105,27 @@ Nidmegent Esports（以下「甲」という。）と、
 </p>
 
 <ul>
-<li>CREATOR部門</li>
-<li>STREAMER部門</li>
-<li>VALORANT部門</li>
-<li>Minecraft部門</li>
-<li>Apex Legends部門</li>
+
+<li>
+CREATOR部門
+</li>
+
+<li>
+STREAMER部門
+</li>
+
+<li>
+VALORANT部門
+</li>
+
+<li>
+Minecraft部門
+</li>
+
+<li>
+Apex Legends部門
+</li>
+
 </ul>
 
 <p>
@@ -71,15 +138,17 @@ VALORANT Premier部門：
 </p>
 
 <p>
-契約期間満了の7日前までに甲または乙から更新拒絶の意思表示がない場合、
+契約期間満了の7日前までに
+甲または乙から更新拒絶の意思表示がない場合、
 本契約は同一条件で更新されるものとする。
 </p>
 
 <p>
-契約更新時に双方協議のうえ契約条件を変更することができる。
+契約更新時に双方協議のうえ
+契約条件を変更することができる。
 </p>
 
-<h4>第2条（活動場所）</h4>
+<h3>第2条（活動場所）</h3>
 
 <p>
 乙の活動場所は原則として自由とする。
@@ -90,236 +159,172 @@ VALORANT Premier部門：
 甲が必要と認めた場合は指定場所での活動を求めることができる。
 </p>
 
-<h4>第3条（活動内容）</h4>
-
-<p>乙は以下の活動を行うものとする。</p>
+<h3>第3条（活動内容）</h3>
 
 <ul>
-<li>YouTube、Twitchその他配信サービスにおける配信活動</li>
-<li>eスポーツ大会への参加</li>
-<li>チーム及びスポンサーの広報活動</li>
-<li>SNSを利用した情報発信</li>
-<li>その他甲と乙が協議のうえ定める活動</li>
+
+<li>
+YouTube、Twitchその他配信サービスにおける配信活動
+</li>
+
+<li>
+eスポーツ大会への参加
+</li>
+
+<li>
+チーム及びスポンサーの広報活動
+</li>
+
+<li>
+SNSを利用した情報発信
+</li>
+
+<li>
+その他甲と乙が協議のうえ定める活動
+</li>
+
 </ul>
 
-<h4>第4条（報酬）</h4>
+<h3>第4条（報酬）</h3>
 
-<p>乙に対する報酬は以下のとおりとする。</p>
+<p>
+乙に対する報酬は以下のとおりとする。
+</p>
 
 <ul>
-<li>指定大会優勝時：1大会につき2,000円</li>
-<li>その他報酬については甲乙協議のうえ別途定める。</li>
+
+<li>
+指定大会優勝時：
+1大会につき2,000円
+</li>
+
+<li>
+その他報酬については
+甲乙協議のうえ別途定める。
+</li>
+
 </ul>
 
-<p>報酬の締切日は毎月末日とする。</p>
-<p>報酬の支払日は翌月末日とする。</p>
-<p>支払方法はPayPay送金又は銀行振込とする。</p>
-<p>振込手数料の負担は甲とする。</p>
-
-<h4>第5条（賞金）</h4>
-
 <p>
-乙が大会等で賞金を獲得した場合、
-賞金総額の15％をチーム運営費として甲へ支払うものとする。
+報酬の締切日は毎月末日とする。
 </p>
 
 <p>
-ただし、別途大会規約等に定めがある場合はその定めを優先する。
-</p>
-
-<h4>第6条（賞与）</h4>
-
-<p>
-甲はチームの業績、活動実績その他の事情を考慮し、
-任意に賞与又は特別報酬を支給することができる。
-</p>
-
-<h4>第7条（SNS及び行動規範）</h4>
-
-<p>乙は以下の行為を行ってはならない。</p>
-
-<ul>
-<li>チートツールの使用</li>
-<li>アカウント売買又は代行行為</li>
-<li>ゲーム運営会社の利用規約違反</li>
-<li>配信、SNSその他媒体における誹謗中傷、暴言、晒し行為</li>
-<li>チーム又はスポンサーの信用を著しく損なう行為</li>
-<li>法令又は公序良俗に反する行為</li>
-</ul>
-
-<h4>第8条（契約解除）</h4>
-
-<p>
-乙は14日前までに甲へ通知することで本契約を解除することができる。
+報酬の支払日は翌月末日とする。
 </p>
 
 <p>
-甲は乙が前条に違反した場合、
-又はチーム運営上重大な支障があると認められる場合、
-本契約を解除することができる。
+支払方法はPayPay送金又は銀行振込とする。
 </p>
 
 <p>
-契約解除に際して、
-双方に故意又は重大な過失がある場合を除き、
-損害賠償請求は行わないものとする。
+振込手数料の負担は甲とする。
 </p>
 
-<h4>第9条（肖像権及び配信コンテンツ）</h4>
-
-<p>
-乙は、
-甲がチーム活動の広報目的で乙の氏名、
-ハンドルネーム、
-画像、
-動画及び配信アーカイブを利用することを許諾する。
-</p>
-
-<p>
-甲は前項の利用に際し、
-乙の名誉又は信用を不当に害してはならない。
-</p>
-
-<h4>第10条（秘密保持）</h4>
-
-<p>
-乙は、
-チーム運営上知り得た非公開情報を第三者へ漏洩してはならない。
-</p>
-
-<p>
-本条は契約終了後も有効とする。
-</p>
-
-<h4>第11条（契約内容の変更）</h4>
-
-<p>
-甲が契約内容を変更する場合は、
-事前に乙へ通知するものとする。
-</p>
-
-<p>
-変更内容について乙が異議を申し出た場合、
-双方誠実に協議するものとする。
-</p>
-
-<h4>第12条（協議事項）</h4>
-
-<p>
-本契約に定めのない事項又は本契約の解釈について疑義が生じた場合は、
-甲乙誠実に協議し解決するものとする。
-</p>
-
-<h4>第13条（管轄裁判所）</h4>
-
-<p>
-本契約に関する紛争については、
-甲の所在地を管轄する地方裁判所又は簡易裁判所を
-第一審の専属的合意管轄裁判所とする。
-</p>
-
-<hr>
-
-<p>
-以上、本契約締結の証として本書2通を作成し、
-甲乙各1通を保有する。
-</p>
+<!-- 第5条～第13条はここへ続く -->
 
 </div>
 
 <label class="agree-box">
-<input type="checkbox" id="agreeCheck" disabled>
+
+<input
+type="checkbox"
+id="agreeCheck"
+disabled
+>
+
 契約内容を確認しました
+
 </label>
+
+</div>
 
 </section>
 
+<!-- 契約者情報 -->
+
 <section class="form-section">
 
-<h2>契約者情報</h2>
+<div class="card">
+
+<h2>
+契約者情報
+</h2>
 
 <div class="input-group">
-<label>氏名</label>
-<input type="text" id="fullname">
+
+<label>
+氏名
+</label>
+
+<input
+type="text"
+id="fullname"
+placeholder="氏名を入力"
+>
+
 </div>
 
 <div class="input-group">
-<label>ハンドルネーム</label>
-<input type="text" id="nickname">
+
+<label>
+ハンドルネーム
+</label>
+
+<input
+type="text"
+id="nickname"
+placeholder="ハンドルネームを入力"
+>
+
 </div>
 
 <div class="input-group">
-<label>メールアドレス</label>
-<input type="email" id="email">
+
+<label>
+メールアドレス
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="sample@example.com"
+>
+
 </div>
 
 <div class="input-group">
-<label>所属部門</label>
+
+<label>
+所属部門
+</label>
 
 <select id="division">
 
-<option>VALORANT</option>
+<option>
+VALORANT
+</option>
 
-<option>Apex Legends</option>
+<option>
+Apex Legends
+</option>
 
-<option>Minecraft</option>
+<option>
+Minecraft
+</option>
 
-<option>STREAMER</option>
+<option>
+STREAMER
+</option>
 
-<option>CREATOR</option>
+<option>
+CREATOR
+</option>
 
-<option>VALORANT Premier</option>
+<option>
+VLRT PREMIER
+</option>
 
 </select>
 
 </div>
-
-<button id="sealBtn">
-電子印鑑生成
-</button>
-
-<div class="seal-preview">
-
-<div id="seal">
-
-<span id="sealName">
-契約者
-</span>
-
-</div>
-
-</div>
-
-<button id="contractBtn">
-契約を締結する
-</button>
-
-</section>
-
-<section id="completeSection" class="hidden">
-
-<h2>契約完了</h2>
-
-<p>
-契約番号：
-<span id="contractNumber"></span>
-</p>
-
-<button id="pdfBtn">
-PDFダウンロード
-</button>
-
-</section>
-
-<footer>
-
-<p>
-© Mellena Studio
-</p>
-
-</footer>
-
-<script src="script.js"></script>
-
-</body>
-</html>
