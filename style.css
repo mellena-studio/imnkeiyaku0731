@@ -1,356 +1,755 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Segoe UI",sans-serif;
-}
+/* =======================================
+   Mellena Studio Contract System
+   Black × Gold Premium Theme
+======================================= */
 
 :root{
-    --gold:#d4af37;
-    --gold-light:#f5d97b;
-    --black:#0b0b0b;
-    --card:#141414;
-    --border:#2b2b2b;
+
+--gold:#d4af37;
+--gold-light:#f3d46b;
+--gold-dark:#9f7b13;
+
+--bg:#080808;
+--bg2:#101010;
+
+--card:#151515;
+
+--text:#ffffff;
+--sub:#bdbdbd;
+
+--success:#2ecc71;
+
+}
+
+/* ====================
+   Base
+==================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
 }
 
 body{
-    background:var(--black);
-    color:#fff;
-    min-height:100vh;
-    overflow-x:hidden;
+
+background:var(--bg);
+
+color:var(--text);
+
+font-family:
+"Segoe UI",
+"Hiragino Sans",
+sans-serif;
+
+min-height:100vh;
+
+overflow-x:hidden;
+
 }
 
-/* 背景演出 */
+/* ====================
+   Background Glow
+==================== */
 
 .background-glow{
-    position:fixed;
-    inset:0;
-    z-index:-1;
 
-    background:
-    radial-gradient(circle at 20% 20%,
-    rgba(212,175,55,.15),
-    transparent 30%),
+position:fixed;
 
-    radial-gradient(circle at 80% 70%,
-    rgba(212,175,55,.12),
-    transparent 35%);
+top:-300px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:900px;
+height:900px;
+
+background:
+radial-gradient(
+circle,
+rgba(212,175,55,.15),
+transparent 70%
+);
+
+pointer-events:none;
+
+z-index:-1;
+
 }
 
-/* ヘッダー */
+/* ====================
+   Header
+==================== */
 
 header{
-    text-align:center;
-    padding:60px 20px;
+
+padding:60px 20px;
+
+text-align:center;
+
 }
 
 .logo{
-    width:160px;
-    margin-bottom:20px;
 
-    animation:
-    floatLogo 4s ease-in-out infinite;
+width:180px;
+
+animation:
+floatLogo 6s ease-in-out infinite;
+
+filter:
+drop-shadow(
+0 0 20px
+rgba(212,175,55,.35)
+);
+
 }
 
 @keyframes floatLogo{
 
-    0%{
-        transform:translateY(0px);
-    }
+0%{
 
-    50%{
-        transform:translateY(-12px);
-    }
+transform:
+translateY(0px);
 
-    100%{
-        transform:translateY(0px);
-    }
+}
+
+50%{
+
+transform:
+translateY(-12px);
+
+}
+
+100%{
+
+transform:
+translateY(0px);
+
+}
 
 }
 
 header h1{
-    color:var(--gold);
-    font-size:42px;
-    font-weight:700;
-    letter-spacing:2px;
+
+font-size:3rem;
+
+margin-top:20px;
+
+color:var(--gold);
+
+letter-spacing:2px;
+
 }
 
-header p{
-    color:#aaa;
-    margin-top:10px;
+.subtitle{
+
+margin-top:10px;
+
+color:var(--sub);
+
+font-size:1rem;
+
+letter-spacing:2px;
+
 }
 
-/* セクション */
+/* ====================
+   STEP BAR
+==================== */
+
+.stepbar{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-bottom:40px;
+
+padding:0 20px;
+
+}
+
+.step{
+
+padding:15px 25px;
+
+background:#111;
+
+border:
+
+1px solid #2c2c2c;
+
+border-radius:999px;
+
+font-size:.9rem;
+
+text-align:center;
+
+color:#888;
+
+transition:.3s;
+
+}
+
+.step.active{
+
+background:var(--gold);
+
+color:black;
+
+font-weight:bold;
+
+box-shadow:
+
+0 0 25px
+rgba(212,175,55,.4);
+
+}
+
+/* ====================
+   Sections
+==================== */
 
 section{
-    width:min(1100px,95%);
-    margin:30px auto;
+
+width:min(1200px,95%);
+
+margin:auto;
+
+margin-bottom:40px;
+
 }
 
-/* カード */
+/* ====================
+   Cards
+==================== */
 
-.contract-section,
-.form-section,
-#completeSection{
+.card{
 
-    background:rgba(20,20,20,.85);
+background:
 
-    border:1px solid rgba(212,175,55,.25);
+linear-gradient(
+180deg,
+#181818,
+#101010
+);
 
-    backdrop-filter:blur(20px);
+border:
 
-    border-radius:20px;
+1px solid
+rgba(212,175,55,.3);
 
-    padding:30px;
+border-radius:24px;
 
-    box-shadow:
-    0 0 30px rgba(212,175,55,.08);
+padding:35px;
+
+box-shadow:
+
+0 0 30px
+rgba(0,0,0,.5);
+
+backdrop-filter:blur(10px);
+
 }
 
-section h2{
-    color:var(--gold);
-    margin-bottom:20px;
+.card h2{
+
+color:var(--gold);
+
+margin-bottom:25px;
+
 }
 
-/* 契約書 */
+/* ====================
+   Contract Box
+==================== */
 
 .contract-box{
 
-    height:450px;
+height:500px;
 
-    overflow-y:auto;
+overflow-y:auto;
 
-    border:1px solid var(--border);
+padding:25px;
 
-    background:#0f0f0f;
+background:#0d0d0d;
 
-    padding:25px;
+border:
 
-    border-radius:15px;
+1px solid #222;
 
-    line-height:1.9;
+border-radius:15px;
+
+line-height:1.9;
+
 }
 
 .contract-box h3{
-    color:var(--gold);
-    margin-bottom:15px;
-}
 
-.contract-box h4{
-    margin-top:20px;
-    color:var(--gold-light);
+margin-top:25px;
+
+margin-bottom:10px;
+
+color:var(--gold);
+
 }
 
 .contract-box ul{
-    margin-left:25px;
+
+margin-left:20px;
+
+margin-top:10px;
+
+margin-bottom:10px;
+
 }
 
-.contract-box hr{
-    margin:25px 0;
-    border:none;
-    border-top:1px solid #333;
+.contract-box::-webkit-scrollbar{
+
+width:10px;
+
 }
 
-/* 同意チェック */
+.contract-box::-webkit-scrollbar-thumb{
+
+background:var(--gold);
+
+border-radius:20px;
+
+}
+
+/* ====================
+   Agree
+==================== */
 
 .agree-box{
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    gap:10px;
+gap:10px;
 
-    margin-top:20px;
+margin-top:20px;
 
-    font-size:15px;
+font-size:1rem;
+
 }
 
 .agree-box input{
 
-    width:18px;
+transform:scale(1.2);
 
-    height:18px;
 }
 
-/* 入力 */
+/* ====================
+   Inputs
+==================== */
 
 .input-group{
-    margin-bottom:20px;
+
+margin-bottom:20px;
+
 }
 
 .input-group label{
-    display:block;
-    margin-bottom:8px;
-    color:var(--gold-light);
+
+display:block;
+
+margin-bottom:8px;
+
+color:var(--gold);
+
 }
 
-input,
-select{
+.input-group input,
+.input-group select{
 
-    width:100%;
+width:100%;
 
-    padding:14px;
+padding:14px;
 
-    border-radius:12px;
+background:#0d0d0d;
 
-    border:1px solid #333;
+color:white;
 
-    background:#0d0d0d;
+border:
 
-    color:#fff;
+1px solid #333;
 
-    outline:none;
+border-radius:10px;
 
-    transition:.3s;
+outline:none;
+
+transition:.3s;
+
 }
 
-input:focus,
-select:focus{
+.input-group input:focus,
+.input-group select:focus{
 
-    border-color:var(--gold);
+border-color:var(--gold);
 
-    box-shadow:
-    0 0 15px rgba(212,175,55,.3);
+box-shadow:
+
+0 0 15px
+rgba(212,175,55,.2);
+
 }
 
-/* ボタン */
+/* ====================
+   Seal
+==================== */
 
-button{
+#sealContainer{
 
-    width:100%;
+display:flex;
 
-    padding:16px;
+justify-content:center;
 
-    margin-top:15px;
+margin:20px 0;
 
-    border:none;
-
-    border-radius:14px;
-
-    background:
-    linear-gradient(
-        135deg,
-        var(--gold),
-        #a67c00
-    );
-
-    color:#000;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-button:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:
-    0 10px 25px rgba(212,175,55,.25);
-}
-
-/* 印鑑 */
-
-.seal-preview{
-
-    display:flex;
-
-    justify-content:center;
-
-    margin-top:30px;
-
-    margin-bottom:20px;
 }
 
 #seal{
 
-    width:150px;
+width:150px;
+height:150px;
 
-    height:150px;
+border:6px solid red;
 
-    border:6px solid #ff3333;
+border-radius:50%;
 
-    border-radius:50%;
+display:flex;
 
-    display:flex;
+align-items:center;
+justify-content:center;
 
-    align-items:center;
+text-align:center;
 
-    justify-content:center;
+font-size:1rem;
 
-    text-align:center;
+font-weight:bold;
 
-    color:#ff3333;
+color:red;
 
-    font-weight:700;
+background:white;
 
-    font-size:20px;
+white-space:pre-line;
 
-    line-height:1.5;
+transform:rotate(-6deg);
 
-    background:rgba(255,0,0,.04);
+box-shadow:
+
+0 0 20px
+rgba(255,0,0,.2);
+
 }
 
-#sealName{
-    white-space:pre-line;
+/* ====================
+   Buttons
+==================== */
+
+.gold-btn{
+
+background:
+
+linear-gradient(
+180deg,
+var(--gold-light),
+var(--gold)
+);
+
+color:black;
+
+border:none;
+
+padding:14px 28px;
+
+border-radius:12px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
 }
 
-/* 完了画面 */
+.gold-btn:hover{
 
-#completeSection{
+transform:translateY(-2px);
 
-    text-align:center;
+box-shadow:
+
+0 0 25px
+rgba(212,175,55,.45);
+
 }
 
-#contractNumber{
+.large{
 
-    color:var(--gold);
+width:100%;
 
-    font-size:22px;
+margin-top:15px;
 
-    font-weight:700;
+}
+
+.gray-btn{
+
+background:#444;
+
+color:white;
+
+border:none;
+
+padding:14px 28px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+}
+
+/* ====================
+   Modal
+==================== */
+
+.modal{
+
+position:fixed;
+
+inset:0;
+
+background:
+rgba(0,0,0,.8);
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+z-index:999;
+
 }
 
 .hidden{
-    display:none;
+
+display:none !important;
+
 }
 
-/* フッター */
+.modal-content{
+
+width:min(500px,95%);
+
+background:#111;
+
+padding:35px;
+
+border-radius:20px;
+
+border:
+
+1px solid var(--gold);
+
+}
+
+.modal-content h2{
+
+color:var(--gold);
+
+margin-bottom:20px;
+
+}
+
+.confirm-info{
+
+margin:25px 0;
+
+line-height:2;
+
+}
+
+.modal-buttons{
+
+display:flex;
+
+gap:10px;
+
+}
+
+/* ====================
+   Loading
+==================== */
+
+.loading{
+
+position:fixed;
+
+inset:0;
+
+background:black;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+
+}
+
+.loading-box{
+
+text-align:center;
+
+}
+
+.loader{
+
+width:50px;
+height:50px;
+
+border:
+
+5px solid #333;
+
+border-top:
+
+5px solid var(--gold);
+
+border-radius:50%;
+
+animation:
+spin 1s linear infinite;
+
+margin:20px auto;
+
+}
+
+@keyframes spin{
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ====================
+   Complete
+==================== */
+
+.complete-card{
+
+text-align:center;
+
+}
+
+.success-check{
+
+font-size:5rem;
+
+color:var(--success);
+
+margin:20px 0;
+
+}
+
+.complete-info{
+
+line-height:2;
+
+margin:25px 0;
+
+}
+
+.qr-area{
+
+margin-top:30px;
+
+}
+
+#qrCanvas{
+
+background:white;
+
+padding:10px;
+
+border-radius:10px;
+
+}
+
+/* ====================
+   Footer
+==================== */
 
 footer{
 
-    text-align:center;
+padding:40px;
 
-    padding:50px 20px;
+text-align:center;
 
-    color:#777;
+color:#888;
+
+font-size:.9rem;
+
 }
 
-/* スマホ */
+/* ====================
+   Mobile
+==================== */
 
 @media(max-width:768px){
 
-    header h1{
-        font-size:30px;
-    }
+header h1{
 
-    .logo{
-        width:120px;
-    }
+font-size:2rem;
 
-    .contract-box{
-        height:350px;
-    }
+}
 
-    #seal{
+.logo{
 
-        width:120px;
+width:120px;
 
-        height:120px;
+}
 
-        font-size:16px;
-    }
+.card{
+
+padding:20px;
+
+}
+
+.contract-box{
+
+height:400px;
+
+}
+
+.step{
+
+width:100%;
+
+}
+
+.modal-buttons{
+
+flex-direction:column;
+
+}
+
 }
