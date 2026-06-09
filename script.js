@@ -162,7 +162,7 @@ contractBtn.addEventListener("click", async () => {
 
 // PDF生成
 
-pdfBtn.addEventListener("click", () => {
+pdfBtn.addEventListener("click", async () => {
 
     const { jsPDF } = window.jspdf;
 
