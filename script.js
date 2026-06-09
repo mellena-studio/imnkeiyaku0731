@@ -437,13 +437,9 @@ doc.save(
 
 function sendEmail() {
 
-emailjs.send(
+async function sendEmail() {
 
-"service_4eo6dni",
-
-"template_g2k97fb",
-
-{
+const data = {
 
 contract_number:
 currentContractNumber,
@@ -461,28 +457,36 @@ division:
 division.value,
 
 signed_date:
-new Date().toLocaleString(
-"ja-JP"
-)
+new Date().toLocaleString("ja-JP")
+
+};
+
+try {
+
+await emailjs.send(
+"service_4eo6dni",
+"template_g2k97fb",
+data
+);
+
+await emailjs.send(
+"service_4eo6dni",
+"template_3jgwwvp",
+data
+);
+
+console.log(
+"送信成功"
+);
+
+}
+catch(error){
+
+console.error(error);
 
 }
 
-)
-
-.then(() => {
-
-console.log(
-"メール送信成功"
-);
-
-})
-
-.catch(error => {
-
-console.error(
-"メール送信失敗",
-error
-);
+}
 
 });
 
